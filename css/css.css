@@ -1,0 +1,190 @@
+body, html, h1, h2, h3, h4, h5, h6, p, ul, li {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+body {
+    background-color: #212529;
+}
+
+.contenedor .container {
+    padding: 2.3rem;
+}
+
+.contenedor .container .tarjeta {
+    border: 1px solid #adb5bd;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: rgba(80, 80, 80, 0.3) 0px 7px 29px 0px;
+}
+
+.contenedor .container .contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: max-content;
+    animation: aparecer-abajo 1s ease;
+    transition: transform 0.3s ease;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario:hover {
+    transform: translateY(-3px);
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario > h2 {
+    padding-bottom: 0.4rem;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario #input-tarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgb(80, 80, 80);
+    outline: 0;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario #input-tarea.error {
+    border-color: rgb(255, 61, 61);
+    animation: sacudir 0.6s linear;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario #input-tarea:focus:not(.error) {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario > .error-input-tarea {
+    color: rgb(255, 61, 61);
+    padding-bottom: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario .boton-envio-registro {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  box-shadow: rgba(80, 80, 80, 0.3) 0 2px 5px 0;
+  color: #090a0a;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario .boton-envio-registro:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.contenedor .container .contenedor-formulario .contenedor-tarjeta-formulario .boton-envio-registro:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(80, 80, 80, 0.7) 0 2px 5px 0;
+}
+
+
+@keyframes aparecer-abajo {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes sacudir {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(6px) }
+    50% { transform: translateX(-6px) }
+    75% { transform: translateX(6px) }
+    100% { transform: translateX(0) }
+}
+
+
+
+.contenedor .container .contenedor-registros {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas {
+    width: 100%;
+    max-width: 300px;
+    opacity: 0;
+    animation: aparecer-derecha 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas > h2 {
+    padding-bottom: 0.4rem;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas .lista-tareas {
+    padding-left: 1.4rem;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas .lista-tareas button.boton-eliminar-tarea {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas .lista-tareas li {
+    padding-bottom: 5px;
+}
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas .lista-tareas li.agregada {
+    animation: aparecer 1s ease;
+}
+
+
+.contenedor .container .contenedor-registros .contenedor-tarjeta-tareas .lista-tareas li div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@keyframes aparecer-derecha {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
